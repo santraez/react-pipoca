@@ -1,0 +1,9 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+#yo-container {
+  position: absolute;
+  #yo1 {
+    border-radius: 50%;
+  }
+}

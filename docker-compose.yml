@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile.react.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/home/app/src
+  sass:
+    build:
+      context: .
+      dockerfile: Dockerfile.sass.dev
+    volumes:
+      - ./src/styles:/home/app

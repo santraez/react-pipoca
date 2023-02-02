@@ -1,0 +1,13 @@
+FROM node:18
+RUN mkdir /home/app
+WORKDIR /home/app
+COPY ./package.json .
+RUN npm install
+COPY . .
+RUN git init
+RUN git config --global user.name "santraez"
+RUN git config --global user.email "santraez@gmail.com"
+RUN git config --global core.editor "code --wait"
+RUN git config --global core.autocrlf input
+RUN npm run predeploy
+CMD ["npm", "run", "deploy"]
